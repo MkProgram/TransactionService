@@ -18,7 +18,8 @@ class CreateTransactionTable extends Migration
             $table->string('iban');
             $table->string('subject');
             $table->string('amount');
-            $table->uuid('user_id');
+            $table->dateTime('date');
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('bank_users');
             $table->timestamps();
             $table->primary('id');
